@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="UTF-8" />
+<title>その１</title>
+</head>
+<body>
+	<h1>indexページ</h1>
+	<div id="container-inner">
+		<div id="contents">
+			<!-- コンテンツここから -->
+			<div class="container-fluid">
+				<form method="post" th:object="${sessionForm}"
+					th:action="@{/sessionTest1}">
+					<input type="text" th:field="*{name1}" /> <input type="submit" />
+					<div>
+						<span th:text="*{name1}"></span>
+						<h1 th:text="*{name2}"></h1>
+						<h1>ーーーーーーーー</h1>
+						<span th:text="${name3}"></span>
+					</div>
+				</form>
+				
+				<!--
+				<div th:with="x=1,y=2">
+					<p th:text="${x}"></p>
+					<p th:text="${y}"></p>
+				</div>
+
+				<p th:text="#{content.title}"></p>
+				<p th:text="#{content.message}"></p>
+				-->
+				<!-- 
+				<p th:text="${param.id[0]}"></p>
+				<p th:text="${param.id[1]}"></p>
+				 -->
+				 <!-- 
+				<p th:text="11 + 5"></p>
+				<p th:text="11 - 5"></p>
+				<p th:text="11 * 5"></p>
+				<p th:text="11 / 5"></p>
+				<p th:text="11 % 5"></p>
+
+				<p th:text="11 &gt; 5"></p>
+				<p th:text="11 &lt; 5"></p>
+				<p th:text="11 &gt;= 5"></p>
+				<p th:text="11 &lt;= 5"></p>
+
+				<p th:text="11 == 11"></p>
+				<p th:text="11 != 5"></p>
+				 -->
+				<tr th:each="customer: ${customers}">
+					<td th:text="${customer.id}"></td>
+					<td th:text="${customer.lastName}"></td>
+					<td th:text="${customer.firstName}"></td>
+				</tr>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

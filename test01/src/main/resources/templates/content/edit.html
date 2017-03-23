@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title>編集画面</title>
+  </head>
+  <body>
+    <form method="post" action="/index/contents/" th:object="${sessionForm}">
+      <table>
+        <tr>
+          <td>タイトル</td>
+          <td>URL</td>
+          <td>メモ</td>
+        </tr>
+        <tr>
+          <td th:text="*{title}">タイトルが表示されます</td>
+          <td><a th:href="@{*{url}}" th:text="*{url}"></a></td>
+          <td th:text="*{memo}">メモが表示されます</td>
+          <td><button type="submit" name="edit">詳細</button></td>
+          <td><button type="submit" name="edit">編集</button></td>
+          <td><button type="submit" name="delete">削除</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
