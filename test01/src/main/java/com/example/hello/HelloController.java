@@ -43,7 +43,7 @@ public class HelloController {
 //			System.out.println("値とったよ！！！");
 //			return "hello/form";
 //		} else if (helloForm.getNickName().equals("あゆみ")) {
-//			System.out.println("あゆみ大好き！！！");
+//			System.out.println("mistake！！！");
 //			//redirectAttrs.addAttribute("val", text1);
 //			return "hello/edit";
 //		}
